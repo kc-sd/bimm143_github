@@ -15,7 +15,7 @@ My classwork for [BIMM143](https://bioboot.github.io/bimm143_W26/) at UC San Die
 
 - Class 09 [Candy PCA mini-project](Class09/Lab09.md)
 
-- Class 10 [Structural Bioinformatics Pt 1](Lab 10/lab 10.qmd)
+- Class 10 [Structural Bioinformatics Pt 1](<Lab 10/lab 10.qmd>)
 
 - Class 11 [Structural Bioinformatics Pt 2](class11/class11.md)
 
