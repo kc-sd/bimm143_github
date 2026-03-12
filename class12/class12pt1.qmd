@@ -1,0 +1,70 @@
+---
+title: "Class 12 Pt. 2"
+author: "Kyle Canturia (A17502778)"
+format: pdf
+---
+
+# Section 1: Identify genetic variants of interest
+
+Downloaded data from Ensembl as a csv file
+
+```{r}
+mxl <- read.csv("373531-SampleGenotypes-Homo_sapiens_Variation_Sample_rs8067378.csv")
+head(mxl)
+```
+
+```{r}
+table(mxl$Genotype..forward.strand.)
+```
+
+GBR dataset
+
+```{r}
+gbr <- read.csv("373522-SampleGenotypes-Homo_sapiens_Variation_Sample_rs8067378.csv")
+head(gbr)
+```
+
+# Section 4: Population Scale Analysis
+
+```{r}
+pop <- read.table("rs8067378_ENSG00000172057.6.txt")
+head(pop)
+#reads dataset and assigns it to a variable
+```
+
+> Q13: Read this file into R and determine the sample size for each genotype and their
+corresponding median expression levels for each of these genotypes.
+
+```{r}
+table(pop$geno)
+##only looks at the column "geno" and returns count of how many of each genotype is present
+```
+Theres 108 A|A, 233 A|G, and 121 G|G.
+```{r}
+library(dplyr) 
+  pop %>%
+  group_by(geno) %>%
+  summarize(geno_median = median(exp))
+##uses dplyr tools to first group the samples by genotype, then summarizes the median of each genotype
+```
+
+The median expression levels for A|A, A|G, and G|G are 31.24, 25.06, and 20.07 respectively. 
+
+> Q14: Generate a boxplot with a box per genotype, what could you infer from the relative
+expression value between A/A and G/G displayed in this plot? Does the SNP effect the
+expression of ORMDL3?
+
+```{r}
+library(ggplot2)
+ggplot(pop) + 
+  aes(geno, exp) +
+  geom_boxplot()
+##makes boxplot with geno on the x axis and exp on the y
+```
+
+A|A has the highest expression value while G|G has the lowest, and A|G is in between. From the plot, it's evident that the SNP is associated with differing expressions of ORMDL3.
+
+
+
+
+
