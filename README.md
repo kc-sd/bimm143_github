@@ -5,6 +5,6 @@ My classwork for [BIMM143](https://bioboot.github.io/bimm143_W26/) at UC San Die
 
 *Introduction to bioinformatics*
 
-- Class 05 [Data Exploration and Visualization with R](class05/class05.qmd)
+- Class 05 [Data Exploration and Visualization with R](class05/class05.md)
 
-- Class 06 [Writing R Functions](Class06/Class06.qmd)
+- Class 06 [Writing R Functions](Class06/Class06.md)
